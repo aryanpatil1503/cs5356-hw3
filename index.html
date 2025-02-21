@@ -39,6 +39,19 @@
       text-decoration: none;
     }
 
+    /* Use CSS Grid for main content layout */
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    section {
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 8px;
+    }
+
     img {
       display: block;
       margin: 1rem auto;
@@ -48,6 +61,12 @@
 
     h1, h2 {
       margin-top: 0;
+    }
+
+    details {
+      background: #e9f5ff;
+      padding: 1rem;
+      border-radius: 4px;
     }
 
     footer {
@@ -137,11 +156,32 @@
         <li><strong>Teaching Assistant:</strong> Guided ML foundations at Break Through Tech AI and assisted in ML Engineering at Cornell Tech, fostering learning in AI and data science for underrepresented communities.</li>
       </ul>
     </section>
+    
+    <section id="extra-info">
+        <h2>Additional Information</h2>
+        <details>
+          <summary>Click to read more about my journey in NLP, ML, and Health Tech</summary>
+          <p>
+            Throughout my academic and professional journey, I've explored the intersection of <strong>Natural Language Processing (NLP)</strong>, <strong>Machine Learning (ML)</strong>, and <strong>health tech</strong>. 
+            My work includes developing generative AI solutions for knowledge management at <strong>ADP</strong>, improving low-resource language models at <strong>L3Cube</strong>, and advancing healthcare accessibility through geospatial data science at <strong>ASAR</strong>.
+          </p>
+          <p>
+            One of my most exciting projects involved building a <strong>Generative AI Chatbot with Retrieval-Augmented Generation (RAG)</strong> using <strong>AWS Bedrock</strong> and <strong>Langchain</strong>. 
+            This system allows efficient querying of PDF documents by creating vector embeddings, enabling real-time contextual responses without the need for extensive fine-tuning.
+          </p>
+          <p>
+            Additionally, my passion for health tech led me to contribute to high-impact research presented at <strong>CUGH</strong> and <strong>APHA</strong>, focusing on quantifying healthcare disparities using geospatial analyses and econometric models.
+          </p>
+          <p>
+            The <code>&lt;details&gt;</code> element, as used here, exemplifies how thoughtful design can deliver meaningful information without overwhelming the user interface—mirroring my approach to data-driven problem-solving.
+          </p>
+        </details>
+      </section>
+      
   </main>
 
   <footer>
     <p>&copy; 2025 Aryan Patil. All rights reserved.</p>
-    <!-- Optional: include contact information using <address> -->
     <address>
       Contact: <a href="mailto:aryan@example.com">aryan@example.com</a>
     </address>

@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
 <head>
   <meta charset="UTF-8" />
   <title>Aryan Patil | MS @ Cornell | Data Scientist | NLP & ML for Health Tech</title>
+  <!-- Meta tags for rich link try -->
+  <meta name="description" content="Aryan Patil's personal portfolio website showcasing expertise in Data Science, NLP, and Health Tech. Explore projects, publications, and interactive features." />
+  <meta itemprop="name" content="Aryan Patil | Data Scientist &amp; NLP Enthusiast" />
+  <meta itemprop="description" content="Discover Aryan Patil's portfolio: a showcase of work in Data Science, Machine Learning, and Health Tech. Read about my journey, projects, and more." />
+  <meta itemprop="image" content="https://aryanpatil1503.github.io/cs5356-hw3/images/profile.jpeg" />
+  <link rel="alternate" type="application/json+oembed" href="https://aryanpatil1503.github.io/cs5356-hw3/oembed.json" title="Aryan Patil Portfolio" />
+  
   <!-- Import Google Font "Poppins" -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* Base Styles */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -16,7 +22,6 @@
       line-height: 1.6;
     }
 
-    /* Container styles for header, main, footer */
     header, main, footer {
       max-width: 900px;
       margin: 2rem auto;
@@ -42,7 +47,6 @@
       font-weight: 300;
     }
 
-    /* Navigation styling */
     nav ul {
       padding: 0;
       list-style: none;
@@ -80,14 +84,14 @@
       font-weight: 500;
     }
 
-    /* Profile image styles with filter and transition */
+    /* filter and transition */
     img {
       display: block;
       margin: 1rem auto;
       max-width: 200px;
       border-radius: 50%;
-      /* Apply a grayscale filter that will be removed on hover */
-      filter: grayscale(60%);
+      /* grayscale filter that will be removed on hover */
+      filter: grayscale(80%);
       transition: filter 0.5s ease;
     }
 
@@ -115,7 +119,17 @@
       cursor: pointer;
     }
 
-    /* Footer styles */
+    /* 
+       Experimentation with the <details> element:
+       I learned that the <details> element provides a built-in, interactive disclosure widget that allows users
+       to toggle additional content without any JavaScript. This native behavior helps keep the interface clean
+       while still offering detailed information on demand.
+    */
+
+    #mouse-interactivity {
+      transition: background-color 0.3s ease;
+    }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
@@ -225,39 +239,56 @@
           Additionally, my passion for health tech led me to contribute to high-impact research presented at <strong>CUGH</strong> and <strong>APHA</strong>, focusing on quantifying healthcare disparities using geospatial analyses and econometric models.
         </p>
       </details>
-      <!-- 
-      Experimentation with the <details> element:
-      I learned that the <details> element provides a built-in, interactive disclosure widget that allows users to toggle additional content without any JavaScript.
-      This native behavior helps keep the interface clean while still offering detailed information on demand.
-      -->
     </section>
 
-    <!-- API data -->
+    <!-- API:Random Joke Section -->
     <section id="joke">
-        <h2>Random Chuck Norris Joke</h2>
-        <p id="joke-content">Loading joke...</p>
-      </section>
-    </main>
-  
-    <footer>
-      <p>&copy; 2025 Aryan Patil. All rights reserved.</p>
-      <address>
-        Contact: <a href="mailto:ap2365@cornell.edu">ap2365@cornell.edu</a>
-      </address>
-    </footer>
-  
-    <!-- JavaScript to fetch data from the API and update the page -->
-    <script>
-      // Fetch a random Chuck Norris joke from the free API
-      fetch('https://api.chucknorris.io/jokes/random')
-        .then(response => response.json())
-        .then(data => {
-          document.getElementById('joke-content').textContent = data.value;
-        })
-        .catch(error => {
-          console.error('Error fetching joke:', error);
-          document.getElementById('joke-content').textContent = 'Sorry, could not load a joke at this time.';
-        });
-    </script>
-  </body>
+      <h2>Random Chuck Norris Joke</h2>
+      <p id="joke-content">Loading joke...</p>
+    </section>
+
+    <!-- Mouse Tracker -->
+    <section id="mouse-interactivity">
+      <h2>Interactive Mouse Tracker</h2>
+      <p>Move your mouse over this section to see real-time coordinates and a dynamic background color change!</p>
+      <p id="mouse-coords">Coordinates: (0, 0)</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Aryan Patil. All rights reserved.</p>
+    <address>
+      Contact: <a href="mailto:aryan@example.com">aryan@example.com</a>
+    </address>
+  </footer>
+
+  <!-- JS to fetch data from the joke API -->
+  <script>
+    fetch('https://api.chucknorris.io/jokes/random')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('joke-content').textContent = data.value;
+      })
+      .catch(error => {
+        console.error('Error fetching joke:', error);
+        document.getElementById('joke-content').textContent = 'Sorry, could not load a joke at this time.';
+      });
+  </script>
+
+  <!-- Mouse Tracker  -->
+  <script>
+    const mouseSection = document.getElementById('mouse-interactivity');
+    const mouseCoords = document.getElementById('mouse-coords');
+
+    document.addEventListener('mousemove', function(event) {
+      const x = event.clientX;
+      const y = event.clientY;
+      mouseCoords.textContent = `Coordinates: (${x}, ${y})`;
+      const red = x % 256;
+      const green = y % 256;
+      const blue = (x + y) % 256;
+      mouseSection.style.backgroundColor = `rgba(${red}, ${green}, ${blue}, 0.2)`;
+    });
+  </script>
+</body>
 </html>

@@ -3,75 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <title>Aryan Patil | MS @ Cornell | Data Scientist | NLP & ML for Health Tech</title>
+  <!-- Import Google Font "Poppins" -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    /* Base Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 1rem;
-      background-color: #f8f8f8;
+      padding: 0;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      color: #333;
+      line-height: 1.6;
     }
 
+    /* Container styles for header, main, footer */
     header, main, footer {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 1rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.5rem;
       background-color: #ffffff;
-      margin-bottom: 1rem;
-      border-radius: 8px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     header {
       text-align: center;
+      border-bottom: 2px solid #f0f0f0;
     }
 
+    header h1 {
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    header p {
+      margin: 0.3rem 0 1rem;
+      color: #555;
+      font-weight: 300;
+    }
+
+    /* Navigation styling */
     nav ul {
       padding: 0;
       list-style: none;
       margin: 1rem 0;
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
     nav a {
-      color: #1a0dab;
+      color: #1a73e8;
       text-decoration: none;
+      font-weight: 500;
     }
 
-    /* CSS Grid */
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* CSS Grid layout for main content */
     main {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
     section {
       padding: 1rem;
-      background-color: #fff;
-      border-radius: 8px;
     }
 
+    section h2 {
+      margin-top: 0;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    /* Profile image styles with filter and transition */
     img {
       display: block;
       margin: 1rem auto;
       max-width: 200px;
       border-radius: 50%;
+      /* Apply a grayscale filter that will be removed on hover */
+      filter: grayscale(30%);
+      transition: filter 0.5s ease;
     }
 
-    h1, h2 {
-      margin-top: 0;
+    img:hover {
+      filter: grayscale(0%);
     }
 
+    /* 
+       Experimentation with the CSS filter property:
+       I learned that the filter property allows you to apply visual effects (such as grayscale, blur, brightness, etc.)
+       directly on elements without extra markup or JavaScript.
+       When combined with a CSS transition, it provides a smooth, interactive effect that enhances user experience while keeping the code concise.
+    */
+
+    /* Details element styling */
     details {
-      background: #e9f5ff;
+      background: #f1f7ff;
       padding: 1rem;
-      border-radius: 4px;
+      border-radius: 6px;
+      border: 1px solid #d0e2ff;
     }
 
+    details summary {
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* Footer styles */
     footer {
       text-align: center;
       font-size: 0.9rem;
-      color: #555;
+      color: #777;
+    }
+
+    footer address {
+      margin-top: 0.5rem;
+      font-style: normal;
     }
 
     ul {
@@ -156,15 +209,30 @@
       </ul>
     </section>
     
-
     <section id="extra-info">
       <h2>Additional Information</h2>
       <details>
-        <summary>Click to read more about what I learned using the <code>&lt;details&gt;</code> element</summary>
+        <summary>Click to read more about my journey in NLP, ML, and Health Tech</summary>
         <p>
-          I discovered that the <code>&lt;details&gt;</code> element provides a built-in, interactive disclosure widget that lets users toggle visibility of extra content without any JavaScript. This behavior makes it a simple yet powerful tool for managing supplementary information while keeping the interface uncluttered.
+          Throughout my academic and professional journey, I've explored the intersection of <strong>Natural Language Processing (NLP)</strong>, <strong>Machine Learning (ML)</strong>, and <strong>health tech</strong>. 
+          My work includes developing generative AI solutions for knowledge management at <strong>ADP</strong>, improving low-resource language models at <strong>L3Cube</strong>, and advancing healthcare accessibility through geospatial data science at <strong>ASAR</strong>.
+        </p>
+        <p>
+          One of my most exciting projects involved building a <strong>Generative AI Chatbot with Retrieval-Augmented Generation (RAG)</strong> using <strong>AWS Bedrock</strong> and <strong>Langchain</strong>. 
+          This system allows efficient querying of PDF documents by creating vector embeddings, enabling real-time contextual responses without the need for extensive fine-tuning.
+        </p>
+        <p>
+          Additionally, my passion for health tech led me to contribute to high-impact research presented at <strong>CUGH</strong> and <strong>APHA</strong>, focusing on quantifying healthcare disparities using geospatial analyses and econometric models.
+        </p>
+        <p>
+          The <code>&lt;details&gt;</code> element, as used here, exemplifies how thoughtful design can deliver meaningful information without overwhelming the user interface—mirroring my approach to data-driven problem-solving.
         </p>
       </details>
+      <!-- 
+      Experimentation with the <details> element:
+      I learned that the <details> element provides a built-in, interactive disclosure widget that allows users to toggle additional content without any JavaScript.
+      This native behavior helps keep the interface clean while still offering detailed information on demand.
+      -->
     </section>
   </main>
 
